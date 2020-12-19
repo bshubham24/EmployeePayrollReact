@@ -118,6 +118,10 @@ const PayrollForm = (props) => {
     }
     const save = async (event) => {
         event.preventDefault();
+        if(await handleValidations()){
+            console.log("error", formValue);
+            return;
+        }else{
         let object = {
           name: formValue.name,
           departMent: formValue.departMentValue,
@@ -132,11 +136,13 @@ const PayrollForm = (props) => {
           .then((data) => {
             console.log("data added");
             props.history.push("");
+            window.location.reload();
           })
           .catch((err) => {
             console.log("err while Add");
           });
         };
+    }
     const reset = () => {
         setForm({ ...initialValue, id: formValue.id, isUpdate: formValue.isUpdate });
 

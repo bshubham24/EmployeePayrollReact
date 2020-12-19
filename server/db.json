@@ -47,6 +47,54 @@
       "notes": "",
       "id": 1604589731061,
       "profileUrl": "../assets/profile-images/Ellipse -3.png"
+    },
+    {
+      "name": "Shubham",
+      "departMent": [
+        "Sales"
+      ],
+      "gender": "male",
+      "salary": "200000",
+      "startDate": "1 Jan 2020",
+      "notes": "dd",
+      "id": "2",
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "name": "Ankit",
+      "departMent": [
+        "Sales"
+      ],
+      "gender": "male",
+      "salary": "200000",
+      "startDate": "1 Jan 2020",
+      "notes": "dd",
+      "id": "19",
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "name": "Vikas",
+      "departMent": [
+        "Sales"
+      ],
+      "gender": "male",
+      "salary": "",
+      "startDate": "1 Jan 2020",
+      "notes": "",
+      "id": "9",
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "name": "Rajni",
+      "departMent": [
+        "Sales"
+      ],
+      "gender": "female",
+      "salary": "100000",
+      "startDate": "1 Jan 2020",
+      "notes": "sss",
+      "id": "25",
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
     }
   ]
-} 
+}
