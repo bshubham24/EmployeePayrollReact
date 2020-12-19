@@ -95,6 +95,18 @@
       "notes": "sss",
       "id": "25",
       "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+    },
+    {
+      "name": "Ravi",
+      "departMent": [
+        "Sales"
+      ],
+      "gender": "male",
+      "salary": "200000",
+      "startDate": "1 Jan 2020",
+      "notes": "dd",
+      "id": "20",
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
     }
   ]
 }
