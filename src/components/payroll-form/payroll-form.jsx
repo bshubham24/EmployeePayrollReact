@@ -134,12 +134,14 @@ const PayrollForm = (props) => {
         };
         employeeService.addEmployee(object)
           .then((data) => {
-            console.log("data added");
+            console.log(data+"/ndata added");
+            alert("Employee data added successfully");
             props.history.push("");
             window.location.reload();
           })
-          .catch((err) => {
-            console.log("err while Add");
+          .catch((error) => {
+            console.log(error+"/nerror while Adding data");
+            alert("Error While adding employee data");
           });
         };
     }
