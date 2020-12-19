@@ -5,6 +5,7 @@ import profile3 from '../../assets/profile-images/Ellipse -8.png';
 import profile4 from '../../assets/profile-images/Ellipse -7.png';
 import './payroll-form.css';
 import logo from '../../assets/images/logo.png'
+import EmployeeService from "../../services/employee-payroll-service";
 import { useParams, Link, withRouter } from 'react-router-dom';
 
 const PayrollForm = (props) => {
@@ -41,6 +42,11 @@ const PayrollForm = (props) => {
         }
     }
     const [formValue, setForm] = useState(initialValue);
+
+   const employeeService = new EmployeeService();
+
+    let _ = require('lodash');
+    formValue.id = _.uniqueId();
 
     const changeValue = (event) => {
         setForm({ ...formValue, [event.target.name]: event.target.value })
@@ -112,13 +118,25 @@ const PayrollForm = (props) => {
     }
     const save = async (event) => {
         event.preventDefault();
-
-        if(await handleValidations()){
-            console.log("error", formValue);
-            return;
-        }
-    }
-
+        let object = {
+          name: formValue.name,
+          departMent: formValue.departMentValue,
+          gender: formValue.gender,
+          salary: formValue.salary,
+          startDate: `${formValue.day} ${formValue.month} ${formValue.year}`,
+          notes: formValue.notes,
+          id: formValue.id,
+          profileUrl: formValue.profileUrl,
+        };
+        employeeService.addEmployee(object)
+          .then((data) => {
+            console.log("data added");
+            props.history.push("");
+          })
+          .catch((err) => {
+            console.log("err while Add");
+          });
+        };
     const reset = () => {
         setForm({ ...initialValue, id: formValue.id, isUpdate: formValue.isUpdate });
 
