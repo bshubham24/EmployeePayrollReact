@@ -16,4 +16,4 @@ class AxiosService {
     }
 }
 
-module.exports = new AxiosService();
+export default new AxiosService();
