@@ -1,30 +1,6 @@
 {
   "employee": [
     {
-      "name": "Shubham",
-      "departMent": [
-        "Sales"
-      ],
-      "gender": "male",
-      "salary": "200000",
-      "startDate": "1 Jan 2020",
-      "notes": "dd",
-      "id": "2",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
-    },
-    {
-      "name": "Cristiano",
-      "departMent": [
-        "Others"
-      ],
-      "gender": "female",
-      "salary": "500000",
-      "startDate": "1 Jan 2020",
-      "notes": "best footballer",
-      "id": "19",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
-    },
-    {
       "name": "Rajni",
       "departMent": [
         "Sales"
@@ -94,6 +70,18 @@
       "startDate": "1 Jan 2020",
       "notes": "Striker",
       "id": "24",
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+    },
+    {
+      "name": "Shubham Bhawsar",
+      "departMent": [
+        "Engineer"
+      ],
+      "gender": "male",
+      "salary": "500000",
+      "startDate": "1 Nov 2020",
+      "notes": "Excellent Engineer..",
+      "id": "OzMMbg3",
       "profileUrl": "../../assets/profile-images/Ellipse -3.png"
     }
   ]

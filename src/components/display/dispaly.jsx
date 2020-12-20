@@ -13,6 +13,21 @@ const Display = (props) => {
   const employeeService = new EmployeeService();
   const update = (employeeId) => {
     props.history.push(`payroll-form/${employeeId}`);
+   };
+   const remove = (employeeId) => {
+    employeeService
+      .deleteEmployee(employeeId)
+      .then((data) => {
+        window.confirm("Data once deleted cannot be restored!! Do you wish to continue ?");
+        alert("Employee Data deleted successfully!!");
+        window.location.reload();
+        console.log("emp data after delete", data);
+        props.getAllEmployee();
+      })
+      .catch((err) => {
+        alert("error while deleting the data!");
+        console.log("error after delete", err);
+      });
   };
   return (
     <table id="display" className="display">
@@ -57,6 +72,7 @@ const Display = (props) => {
               <td>{element.startDate}</td>
               <td>
                 <img
+                  onClick={() => remove(element.id)}
                   src={deleteIcon}
                   alt="delete"
                 />

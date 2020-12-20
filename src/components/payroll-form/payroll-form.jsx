@@ -167,6 +167,7 @@ const PayrollForm = (props) => {
             employeeService
               .updateEmployee(object)
               .then((data) => {
+                  window.confirm("Please confirm again!");
                   alert("Employee Data updated successfully!");
                 console.log("emp data after update", data);
                 props.history.push("");
