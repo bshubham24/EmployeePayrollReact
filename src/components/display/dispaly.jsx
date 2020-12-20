@@ -13,6 +13,20 @@ const Display = (props) => {
   const employeeService = new EmployeeService();
   const update = (employeeId) => {
     props.history.push(`payroll-form/${employeeId}`);
+   };
+   const remove = (employeeId) => {
+    employeeService
+      .deleteEmployee(employeeId)
+      .then((data) => {
+        alert("Employee Data deleted successfully!!");
+        window.location.reload();
+        console.log("emp data after delete", data);
+        props.getAllEmployee();
+      })
+      .catch((err) => {
+        alert("error while deleting the data!");
+        console.log("error after delete", err);
+      });
   };
   return (
     <table id="display" className="display">
@@ -31,13 +45,13 @@ const Display = (props) => {
             <tr key={ind}>
               <td><img className="profile" 
               src={
-                element.profileUrl ===
+                element.profilePic ===
                 "../../assets/profile-images/Ellipse -3.png"
                   ? profile1
-                  : element.profileUrl ===
+                  : element.profilePic ===
                     "../../assets/profile-images/Ellipse -1.png"
                   ? profile2
-                  : element.profileUrl ===
+                  : element.profilePic ===
                     "../../assets/profile-images/Ellipse -8.png"
                   ? profile3
                   : profile4
@@ -57,6 +71,7 @@ const Display = (props) => {
               <td>{element.startDate}</td>
               <td>
                 <img
+                  onClick={() => remove(element.id)}
                   src={deleteIcon}
                   alt="delete"
                 />
