@@ -107,6 +107,30 @@
       "notes": "dd",
       "id": "20",
       "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "name": "Alvaro Morata",
+      "departMent": [
+        "Others"
+      ],
+      "gender": "male",
+      "salary": "200000",
+      "startDate": "1 Nov 2020",
+      "notes": "footballer",
+      "id": "71",
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "name": "Cristiano",
+      "departMent": [
+        "Others"
+      ],
+      "gender": "male",
+      "salary": "500000",
+      "startDate": "1 Jan 2020",
+      "notes": "best footballer",
+      "id": "55",
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
     }
   ]
 }

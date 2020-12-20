@@ -6,7 +6,7 @@ import profile4 from '../../assets/profile-images/Ellipse -7.png';
 import './payroll-form.css';
 import logo from '../../assets/images/logo.png'
 import EmployeeService from "../../services/employee-payroll-service";
-import { useParams, Link, withRouter } from 'react-router-dom';
+import { useParams, Link, withRouter, Redirect } from 'react-router-dom';
 
 const PayrollForm = (props) => {
     let initialValue = {
@@ -47,6 +47,40 @@ const PayrollForm = (props) => {
 
     let _ = require('lodash');
     formValue.id = _.uniqueId();
+
+    const params = useParams();
+
+    useEffect(() => {
+        if (params.id) {
+          getDataById(params.id);
+        }
+      }, []);
+
+      const getDataById = (id) => {
+        employeeService
+          .getEmployee(id)
+          .then((data) => {
+            console.log("data is ", data.data);
+            let obj = data.data;
+            setData(obj);
+          })
+          .catch((err) => {
+            console.log("err is ", err);
+          });
+      };
+
+    const setData = (obj) => {
+        let array = obj.startDate.split(" ");
+        setForm({
+          ...formValue,
+          ...obj,
+          departMentValue: obj.departMent,
+          isUpdate: true,
+          day: array[0],
+          month: array[1],
+          year: array[2],
+        });
+      };
 
     const changeValue = (event) => {
         setForm({ ...formValue, [event.target.name]: event.target.value })
