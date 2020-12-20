@@ -45,9 +45,6 @@ const PayrollForm = (props) => {
 
    const employeeService = new EmployeeService();
 
-    let _ = require('lodash');
-    formValue.id = _.uniqueId();
-
     const params = useParams();
 
     useEffect(() => {
@@ -166,17 +163,31 @@ const PayrollForm = (props) => {
           id: formValue.id,
           profileUrl: formValue.profileUrl,
         };
-        employeeService.addEmployee(object)
-          .then((data) => {
-            console.log(data+"/ndata added");
-            alert("Employee data added successfully");
-            props.history.push("");
-            window.location.reload();
-          })
-          .catch((error) => {
-            console.log(error+"/nerror while Adding data");
-            alert("Error While adding employee data");
-          });
+        if (formValue.isUpdate) {
+            employeeService
+              .updateEmployee(object)
+              .then((data) => {
+                  alert("Employee Data updated successfully!");
+                console.log("emp data after update", data);
+                props.history.push("");
+              })
+              .catch((error) => {
+                alert("WARNING!! Error updating the Employee data!");
+                console.log("Error after update"+error);
+              });
+          } else {
+            employeeService
+              .addEmployee(object)
+              .then((data) => {
+                  alert("Employee Data Added successfully!!")
+                console.log("Employee Data added");
+                props.history.push("");
+              })
+              .catch((err) => {
+                  alert("WARNING!! Error while adding the Employee data!");
+                console.log("some error occured while adding employee");
+              });
+          }
         };
     }
     const reset = () => {
