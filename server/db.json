@@ -1,54 +1,6 @@
 {
   "employee": [
     {
-      "name": "mohit kumar new",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589551457,
-      "profileUrl": "../assets/profile-images/Ellipse 1.png"
-    },
-    {
-      "name": "mohit kumar test",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589594363,
-      "profileUrl": "../assets/profile-images/Ellipse 1.png"
-    },
-    {
-      "name": "mohit",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589699566,
-      "profileUrl": "../assets/profile-images/Ellipse -3.png"
-    },
-    {
-      "name": "test",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589731061,
-      "profileUrl": "../assets/profile-images/Ellipse -3.png"
-    },
-    {
       "name": "Shubham",
       "departMent": [
         "Sales"
@@ -61,27 +13,15 @@
       "profileUrl": "../../assets/profile-images/Ellipse -1.png"
     },
     {
-      "name": "Ankit",
+      "name": "Cristiano",
       "departMent": [
-        "Sales"
+        "Others"
       ],
-      "gender": "male",
-      "salary": "200000",
+      "gender": "female",
+      "salary": "500000",
       "startDate": "1 Jan 2020",
-      "notes": "dd",
+      "notes": "best footballer",
       "id": "19",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
-    },
-    {
-      "name": "Vikas",
-      "departMent": [
-        "Sales"
-      ],
-      "gender": "male",
-      "salary": "",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": "9",
       "profileUrl": "../../assets/profile-images/Ellipse -1.png"
     },
     {
@@ -94,7 +34,7 @@
       "startDate": "1 Jan 2020",
       "notes": "sss",
       "id": "25",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
     },
     {
       "name": "Ravi",
@@ -118,7 +58,7 @@
       "startDate": "1 Nov 2020",
       "notes": "footballer",
       "id": "71",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
     },
     {
       "name": "Cristiano",
@@ -127,10 +67,34 @@
       ],
       "gender": "male",
       "salary": "500000",
-      "startDate": "1 Jan 2020",
+      "startDate": "1 Nov 2020",
       "notes": "best footballer",
       "id": "55",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+    },
+    {
+      "name": "Mohamed Salah",
+      "departMent": [
+        "Others"
+      ],
+      "gender": "male",
+      "salary": "400000",
+      "startDate": "1 Jan 2020",
+      "notes": "Egyptian king",
+      "id": "59",
+      "profileUrl": "../../assets/profile-images/Ellipse -8.png"
+    },
+    {
+      "name": "Firmino",
+      "departMent": [
+        "Others"
+      ],
+      "gender": "male",
+      "salary": "300000",
+      "startDate": "1 Jan 2020",
+      "notes": "Striker",
+      "id": "24",
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
     }
   ]
 }
