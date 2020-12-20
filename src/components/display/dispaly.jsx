@@ -18,7 +18,6 @@ const Display = (props) => {
     employeeService
       .deleteEmployee(employeeId)
       .then((data) => {
-        window.confirm("Data once deleted cannot be restored!! Do you wish to continue ?");
         alert("Employee Data deleted successfully!!");
         window.location.reload();
         console.log("emp data after delete", data);
@@ -46,13 +45,13 @@ const Display = (props) => {
             <tr key={ind}>
               <td><img className="profile" 
               src={
-                element.profileUrl ===
+                element.profilePic ===
                 "../../assets/profile-images/Ellipse -3.png"
                   ? profile1
-                  : element.profileUrl ===
+                  : element.profilePic ===
                     "../../assets/profile-images/Ellipse -1.png"
                   ? profile2
-                  : element.profileUrl ===
+                  : element.profilePic ===
                     "../../assets/profile-images/Ellipse -8.png"
                   ? profile3
                   : profile4

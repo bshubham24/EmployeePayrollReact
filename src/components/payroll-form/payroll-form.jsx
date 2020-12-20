@@ -30,14 +30,14 @@ const PayrollForm = (props) => {
         startDate: '',
         notes: '',
         id: '',
-        profileUrl: '',
+        profilePic: '',
         isUpdate: false,
         error: {
             department: '',
             name: '',
             gender: '',
             salary: '',
-            profileUrl: '',
+            profilePic: '',
             startDate: ''
         }
     }
@@ -105,7 +105,7 @@ const PayrollForm = (props) => {
             name: '',
             gender: '',
             salary: '',
-            profileUrl: '',
+            profilePic: '',
             startDate: ''
         }
         if (!formValue.name.match('^[A-Z]{1}[a-zA-Z]{2,}')) {
@@ -121,8 +121,8 @@ const PayrollForm = (props) => {
             error.salary = 'Salary should be between 1,00,000 and 5,00,000!!'
             isError = true;
         }
-        if (formValue.profileUrl.length < 1) {
-            error.profileUrl = 'Profile picture is required!'
+        if (formValue.profilePic.length < 1) {
+            error.profilePic = 'Profile picture is required!'
             isError = true;
         }
 
@@ -161,13 +161,12 @@ const PayrollForm = (props) => {
           startDate: `${formValue.day} ${formValue.month} ${formValue.year}`,
           notes: formValue.notes,
           id: formValue.id,
-          profileUrl: formValue.profileUrl,
+          profilePic: formValue.profilePic,
         };
         if (formValue.isUpdate) {
             employeeService
               .updateEmployee(object)
               .then((data) => {
-                  window.confirm("Please confirm again!");
                   alert("Employee Data updated successfully!");
                 console.log("emp data after update", data);
                 props.history.push("");
@@ -216,27 +215,27 @@ const PayrollForm = (props) => {
                     <error className="error">{formValue.error.name}</error>
                     </div>
                     <div className="row">
-                        <label className="label text" htmlFor="profileUrl">Profile image</label>
+                        <label className="label text" htmlFor="profilePic">Profile image</label>
                         <div className="profile-radio-button">
                             <label >
-                                <input type="radio" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -1.png'} value="../../assets/profile-images/Ellipse -1.png" onChange={changeValue} />
+                                <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -1.png'} value="../../assets/profile-images/Ellipse -1.png" onChange={changeValue} />
                                 <img className="profile" src={profile1} alt="profile" />
                             </label>
                             <label >
-                                <input type="radio" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -3.png'} value="../../assets/profile-images/Ellipse -3.png" onChange={changeValue} />
+                                <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -3.png'} value="../../assets/profile-images/Ellipse -3.png" onChange={changeValue} />
                                 <img className="profile" src={profile2} alt="profile" />
                             </label>
                             <label >
-                                <input type="radio" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -7.png'} value="../../assets/profile-images/Ellipse -7.png" onChange={changeValue} />
+                                <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -7.png'} value="../../assets/profile-images/Ellipse -7.png" onChange={changeValue} />
                                 <img className="profile" src={profile3} alt="profile" />
                             </label>
                             <label >
-                                <input type="radio" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -8.png'} value="../../assets/profile-images/Ellipse -8.png" onChange={changeValue} />
+                                <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -8.png'} value="../../assets/profile-images/Ellipse -8.png" onChange={changeValue} />
                                 <img className="profile" src={profile4} alt="profile" />
                             </label>
 
                         </div>
-                        <error className="error">{formValue.error.profileUrl}</error>
+                        <error className="error">{formValue.error.profilePic}</error>
                     </div>
                     <div className="row">
                         <label className="label text" htmlFor="gender">Gender</label>

@@ -1,52 +1,16 @@
 {
   "employee": [
     {
-      "name": "Rajni",
-      "departMent": [
-        "Sales"
-      ],
-      "gender": "female",
-      "salary": "100000",
-      "startDate": "1 Jan 2020",
-      "notes": "sss",
-      "id": "25",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
-    },
-    {
-      "name": "Ravi",
-      "departMent": [
-        "Sales"
-      ],
-      "gender": "male",
-      "salary": "200000",
-      "startDate": "1 Jan 2020",
-      "notes": "dd",
-      "id": "20",
-      "profileUrl": "../../assets/profile-images/Ellipse -1.png"
-    },
-    {
-      "name": "Alvaro Morata",
-      "departMent": [
-        "Others"
-      ],
-      "gender": "male",
-      "salary": "200000",
-      "startDate": "1 Nov 2020",
-      "notes": "footballer",
-      "id": "71",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
-    },
-    {
       "name": "Cristiano",
       "departMent": [
         "Others"
       ],
       "gender": "male",
       "salary": "500000",
-      "startDate": "1 Nov 2020",
+      "startDate": "1 April 2020",
       "notes": "best footballer",
       "id": "55",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+      "profilePic": "../../assets/profile-images/Ellipse -3.png"
     },
     {
       "name": "Mohamed Salah",
@@ -58,7 +22,7 @@
       "startDate": "1 Jan 2020",
       "notes": "Egyptian king",
       "id": "59",
-      "profileUrl": "../../assets/profile-images/Ellipse -8.png"
+      "profilePic": "../../assets/profile-images/Ellipse -3.png"
     },
     {
       "name": "Firmino",
@@ -70,7 +34,7 @@
       "startDate": "1 Jan 2020",
       "notes": "Striker",
       "id": "24",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+      "profilePic": "../../assets/profile-images/Ellipse -8.png"
     },
     {
       "name": "Shubham Bhawsar",
@@ -82,7 +46,7 @@
       "startDate": "1 Nov 2020",
       "notes": "Excellent Engineer..",
       "id": "OzMMbg3",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png"
+      "profilePic": "../../assets/profile-images/Ellipse -3.png"
     }
   ]
 }
