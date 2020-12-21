@@ -28,10 +28,15 @@ const Display = (props) => {
         console.log("error after delete", err);
       });
   };
+  const mystyle = {
+    color: "red",
+    // backgroundColor: "DodgerBlue",
+    padding: "10px"
+  };
   return (
     <table id="display" className="display">
       <tbody>
-        <tr key={-1}>
+        <tr style={mystyle}key={-1}>
           <th>Profile Image</th>
           <th>Name</th>
           <th>Gender</th>

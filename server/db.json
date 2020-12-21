@@ -3,7 +3,8 @@
     {
       "name": "Cristiano",
       "departMent": [
-        "Others"
+        "Others",
+        "Sales"
       ],
       "gender": "male",
       "salary": "500000",
@@ -35,18 +36,6 @@
       "notes": "Striker",
       "id": "24",
       "profilePic": "../../assets/profile-images/Ellipse -8.png"
-    },
-    {
-      "name": "Shubham Bhawsar",
-      "departMent": [
-        "Engineer"
-      ],
-      "gender": "male",
-      "salary": "500000",
-      "startDate": "1 Nov 2020",
-      "notes": "Excellent Engineer..",
-      "id": "OzMMbg3",
-      "profilePic": "../../assets/profile-images/Ellipse -3.png"
     }
   ]
 }
