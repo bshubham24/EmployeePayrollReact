@@ -68,7 +68,6 @@ export default class Home extends React.Component {
             <div className="detail-text">
               Employee Details <div className="count"></div>
             </div>
-
               <div className="search-box" onClick={this.openSearch}>
                 <input
                   className={
@@ -80,10 +79,13 @@ export default class Home extends React.Component {
                 />
                 <img className="search-icon" src={searchIcon} alt="" />
               </div>
-              <Link to="payroll-form" className="add-button" >
+              
+              <Link to="payroll-form" className="add-button flex-row-center" >
                 <img src={addIcon} alt="" /> Add User
               </Link>
               </div>
+            
+              
           <div className="table-main">
             <Display
               employeeArray={this.state.employeeArray}

@@ -41,11 +41,15 @@
         -webkit-transition-duration: 0.4s;
         -o-transition-duration: 0.4s;
         outline: none;
-        .search-icon {
-          width: 18%;
-          height: 18%;
-        }
       }
+        .search-icon {
+          position: absolute;
+          right: 10px;
+          z-index: 10;
+          width: 28px;
+          top: 7px;
+        }
+      
       
       .input-expand {
         width: 100px;
@@ -100,6 +104,10 @@
     justify-content: center;
     align-items: center;
   }
+  .button-box {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
   .flex-column {
     display: flex;
     flex-direction: column;
@@ -115,7 +123,7 @@
   }
   @media only screen and (max-width: 600px) {
     .emp-detail {
-      // flex-direction: column;
+      //flex-direction: column;
       align-items: flex-start;
       .button-box {
         flex-direction: column-reverse;
