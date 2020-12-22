@@ -3,7 +3,7 @@ import searchIcon from "../../assets/icons/search-black-18dp.svg";
 import addIcon from "../../assets/icons/add-24px.svg";
 import "./employee-home.scss";
 import EmployeeService from "../../services/employee-payroll-service";
-import Display from "../display/dispaly";
+import Display from "../display/display";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 export default class Home extends React.Component {
@@ -26,11 +26,11 @@ export default class Home extends React.Component {
   getAllEmployee = () => {
     this.employeeService
       .getAllEmployee()
-      .then((data) => {
-        console.log("Employee data ", data.data);
+      .then((response) => {
+        console.log("Employee data ", response.data.data);
         this.setState({
-          employeeArray: data.data,
-          AllEmployeeArray: data.data,
+          employeeArray: response.data.data,
+          AllEmployeeArray: response.data.data,
         });
       })
       .catch((err) => {

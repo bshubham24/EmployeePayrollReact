@@ -1,8 +1,8 @@
 {
   "employee": [
     {
-      "name": "Cristiano",
-      "departMent": [
+      "name": "Cristiano Ronaldo",
+      "departments": [
         "Others",
         "Sales"
       ],
@@ -15,7 +15,7 @@
     },
     {
       "name": "Mohamed Salah",
-      "departMent": [
+      "departments": [
         "Others"
       ],
       "gender": "male",
@@ -26,9 +26,10 @@
       "profilePic": "../../assets/profile-images/Ellipse -3.png"
     },
     {
-      "name": "Firmino",
-      "departMent": [
-        "Others"
+      "name": "Roberto Firmino",
+      "departments": [
+        "Others",
+        "Sales"
       ],
       "gender": "male",
       "salary": "300000",

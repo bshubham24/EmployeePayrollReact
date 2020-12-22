@@ -6,7 +6,7 @@ import profile4 from '../../assets/profile-images/Ellipse -7.png';
 import './payroll-form.scss';
 import logo from '../../assets/images/logo.png'
 import EmployeeService from "../../services/employee-payroll-service";
-import { useParams, Link, withRouter, Redirect } from 'react-router-dom';
+import { useParams, Link, withRouter,} from 'react-router-dom';
 
 const PayrollForm = (props) => {
     let initialValue = {
@@ -46,8 +46,8 @@ const PayrollForm = (props) => {
    const employeeService = new EmployeeService();
 
     const params = useParams();
-
     useEffect(() => {
+        
         if (params.id) {
           getDataById(params.id);
         }
@@ -56,9 +56,9 @@ const PayrollForm = (props) => {
       const getDataById = (id) => {
         employeeService
           .getEmployee(id)
-          .then((data) => {
-            console.log("data is ", data.data);
-            let obj = data.data;
+          .then((response) => {
+            console.log("data is ", response.data.data);
+            let obj = response.data.data;
             setData(obj);
           })
           .catch((err) => {
@@ -67,11 +67,13 @@ const PayrollForm = (props) => {
       };
 
     const setData = (obj) => {
+        console.log(obj.startDate)
         let array = obj.startDate.split(" ");
         setForm({
           ...formValue,
           ...obj,
-          departMentValue: obj.departMent,
+          id: obj.id,
+          departMentValue: obj.departments,
           isUpdate: true,
           day: array[0],
           month: array[1],
@@ -117,8 +119,8 @@ const PayrollForm = (props) => {
             isError = true;
         }
 
-        if ((formValue.salary.valueOf()<100000)||(formValue.salary.valueOf()>500000)) {
-            error.salary = 'Salary should be between 1,00,000 and 5,00,000!!'
+        if ((formValue.salary.valueOf()<30000)||(formValue.salary.valueOf()>300000)) {
+            error.salary = 'Salary should be between 30,000 and 3,00,000!!'
             isError = true;
         }
         if (formValue.profilePic.length < 1) {
@@ -155,7 +157,7 @@ const PayrollForm = (props) => {
         }else{
         let object = {
           name: formValue.name,
-          departMent: formValue.departMentValue,
+          departments: formValue.departMentValue,
           gender: formValue.gender,
           salary: formValue.salary,
           startDate: `${formValue.day} ${formValue.month} ${formValue.year}`,
@@ -165,10 +167,10 @@ const PayrollForm = (props) => {
         };
         if (formValue.isUpdate) {
             employeeService
-              .updateEmployee(object)
-              .then((data) => {
-                  alert("Employee Data updated successfully!");
-                console.log("emp data after update", data);
+              .updateEmployee(formValue.id,object)
+              .then((response) => {
+                alert("Employee Data updated successfully!");
+                console.log("emp data after update", response.data.data);
                 props.history.push("");
               })
               .catch((error) => {
@@ -179,11 +181,13 @@ const PayrollForm = (props) => {
             employeeService
               .addEmployee(object)
               .then((data) => {
+                  console.log(data)
                   alert("Employee Data Added successfully!!")
                 console.log("Employee Data added");
                 props.history.push("");
               })
               .catch((err) => {
+                  console.log(err)
                   alert("WARNING!! Error while adding the Employee data!");
                 console.log("some error occured while adding employee");
               });
@@ -219,19 +223,19 @@ const PayrollForm = (props) => {
                         <div className="profile-radio-button">
                             <label >
                                 <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -1.png'} value="../../assets/profile-images/Ellipse -1.png" onChange={changeValue} />
-                                <img className="profile" src={profile1} alt="profile" />
-                            </label>
-                            <label >
-                                <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -3.png'} value="../../assets/profile-images/Ellipse -3.png" onChange={changeValue} />
                                 <img className="profile" src={profile2} alt="profile" />
                             </label>
                             <label >
+                                <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -3.png'} value="../../assets/profile-images/Ellipse -3.png" onChange={changeValue} />
+                                <img className="profile" src={profile1} alt="profile" />
+                            </label>
+                            <label >
                                 <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -7.png'} value="../../assets/profile-images/Ellipse -7.png" onChange={changeValue} />
-                                <img className="profile" src={profile3} alt="profile" />
+                                <img className="profile" src={profile4} alt="profile" />
                             </label>
                             <label >
                                 <input type="radio" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -8.png'} value="../../assets/profile-images/Ellipse -8.png" onChange={changeValue} />
-                                <img className="profile" src={profile4} alt="profile" />
+                                <img className="profile" src={profile3} alt="profile" />
                             </label>
 
                         </div>
@@ -248,7 +252,7 @@ const PayrollForm = (props) => {
                         <error className="error">{formValue.error.gender}</error>
                     </div>
                     <div className="row">
-                        <label className="label text" htmlFor="department">Department</label>
+                        <label className="label text" htmlFor="departments">Department</label>
                         <div>
                             {formValue.allDepartment.map(item => (
                                 <span key={item}>
@@ -272,15 +276,16 @@ const PayrollForm = (props) => {
                         <label className="label text" htmlFor="startDate">Start Date</label>
                         <div>
                             <select value={formValue.day} onChange={changeValue} id="day" name="day">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
+                            
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
@@ -307,18 +312,19 @@ const PayrollForm = (props) => {
                             <select value={formValue.month} onChange={changeValue} id="month" name="month">
                                 <option value="Jan">January</option>
                                 <option value="Feb">Febuary</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
+                                <option value="Mar">March</option>
+                                <option value="Apr">April</option>
                                 <option value="May">May</option>
-                                <option value="June">June</option>
-                                <option value="July">July</option>
+                                <option value="Jun">June</option>
+                                <option value="Jul">July</option>
                                 <option value="Aug">August</option>
-                                <option value="Sept">September</option>
+                                <option value="Sep">September</option>
                                 <option value="Oct">October</option>
                                 <option value="Nov">November</option>
                                 <option value="Dec">December</option>
                             </select>
                             <select value={formValue.year} onChange={changeValue} id="year" name="year">
+                                <option value="2021">2021</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
                                 <option value="2018">2018</option>
