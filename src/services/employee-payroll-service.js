@@ -2,19 +2,21 @@ import configuration from "../configuration/configuration";
 import AxiosService from "../services/axios-service.js";
 export default class EmployeeService {
   baseUrl = configuration.baseUrl;
+  tokenRequired = false;
+  httpOptions = null;
   addEmployee(data) {
-    return AxiosService.postService(`${this.baseUrl}employee`, data);
+    return AxiosService.postService(`${this.baseUrl}/sql/create`, data);
   }
   getAllEmployee() {
-    return AxiosService.getService(`${this.baseUrl}employee`);
+    return AxiosService.getService(`${this.baseUrl}/sql`);
   }
   getEmployee(id) {
-    return AxiosService.getService(`${this.baseUrl}employee/${id}`);
+    return AxiosService.getService(`${this.baseUrl}/sql/${id}`);
   }
-  updateEmployee(data) {
-    return AxiosService.putService(`${this.baseUrl}employee/${data.id}`, data);
+  updateEmployee(id,data) {
+    return AxiosService.putService(`${this.baseUrl}/sql/update/${id}`, data);
   }
   deleteEmployee(id) {
-    return AxiosService.deleteService(`${this.baseUrl}employee/${id}`);
+    return AxiosService.deleteService(`${this.baseUrl}/sql/delete/${id}`);
   }
 }  

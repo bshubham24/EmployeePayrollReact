@@ -11,16 +11,16 @@ import EmployeeService from "../../services/employee-payroll-service";
 
 const Display = (props) => {
   const employeeService = new EmployeeService();
-  const update = (employeeId) => {
-    props.history.push(`payroll-form/${employeeId}`);
+  const update = (id) => {
+    props.history.push(`payroll-form/${id}`);
    };
    const remove = (employeeId) => {
     employeeService
       .deleteEmployee(employeeId)
-      .then((data) => {
+      .then((response) => {
         alert("Employee Data deleted successfully!!");
         window.location.reload();
-        console.log("emp data after delete", data);
+        console.log("emp data after delete", response.data.data);
         props.getAllEmployee();
       })
       .catch((err) => {
@@ -28,19 +28,14 @@ const Display = (props) => {
         console.log("error after delete", err);
       });
   };
-  const mystyle = {
-    color: "red",
-    // backgroundColor: "DodgerBlue",
-    padding: "10px"
-  };
   return (
     <table id="display" className="display">
       <tbody>
-        <tr style={mystyle}key={-1}>
+        <tr key={-1}>
           <th>Profile Image</th>
           <th>Name</th>
           <th>Gender</th>
-          <th>Department</th>
+          <th>Departments</th>
           <th>Salary</th>
           <th>Start Date</th>
           <th>Actions</th>
@@ -67,8 +62,8 @@ const Display = (props) => {
               <td>{element.name}</td>
               <td className="gender">{element.gender}</td>
               <td>
-                {element.departMent &&
-                  element.departMent.map((dept) => (
+                {element.departments &&
+                  element.departments.map((dept) => (
                     <div className="dept-label">{dept}</div>
                   ))}
               </td>
